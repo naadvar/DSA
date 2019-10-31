@@ -82,7 +82,30 @@ class linked_list
                 cout<<"Wrong mode given"<<endl;
             }
         }
-        
+
+        void deletion_head()
+        {  
+            node *temp = new node;
+            temp = head;
+            head = head->next;
+            delete temp;
+        }
+
+        void deletion_tail()
+        {
+            node *temp = new node;
+            node *prev_temp = new node;
+            temp =head;
+            while(temp->next!=NULL)
+            {
+                prev_temp = temp;
+                temp=temp->next;
+            }
+            tail =prev_temp;
+            tail->next =NULL;
+            delete temp;
+        }
+
 
 };
 
@@ -94,6 +117,10 @@ int main()
     linked.creat_node(3);
     linked.display();
     linked.add_node("HEADf",5);
+    linked.display();
+    linked.deletion_head();
+    linked.display();
+    linked.deletion_tail();
     linked.display();
     return 0;
 }
