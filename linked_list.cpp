@@ -39,6 +39,11 @@ class linked_list
 
         }
 
+        void display()
+        {
+            
+        }
+
 };
 
 int main()
