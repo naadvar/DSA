@@ -40,8 +40,15 @@ class linked_list
         }
 
         void display()
-        {
-            
+        { 
+            node *temp ;
+            temp = head;
+            cout<<"Printing the contents of this particular node"<<endl;
+            while(temp!=NULL)
+            {
+                cout<<"The value of this node is:"<< temp->data <<endl;
+                temp = temp ->next;
+            }
         }
 
 };
@@ -50,5 +57,8 @@ int main()
 {
     linked_list linked;
     linked.creat_node(1);
+    linked.creat_node(2);
+    linked.creat_node(3);
+    linked.display();
     return 0;
 }
